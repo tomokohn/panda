@@ -45,8 +45,8 @@ class List extends Component {
                             <span className="tooltiptext">Last comment: <MomentReact format="HH:mm DD/MM/YYYY">{this.UserLastComment(comment.email, comment.commentDate)}</MomentReact></span>
                         </div>
                         <div className="message-text">
-                            <h2>{comment.email}</h2>
-                            <p>{comment.message}</p>
+                            <h2 className="email">{comment.email}</h2>
+                            <p className="message">{comment.message}</p>
                         </div>
                     </li>
                 )

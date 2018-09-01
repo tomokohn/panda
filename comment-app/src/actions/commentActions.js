@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { COMMENTS_LOADING , GET_COMMENTS, FILTER } from './types';
+import { COMMENTS_LOADING, GET_COMMENTS, FILTER } from './types';
 
 const SERVER_URL = 'http://localhost:5000';
 
@@ -10,7 +10,9 @@ export const getComments = () => dispatch => {
             type: GET_COMMENTS,
             payload: res.data
         })
-    );
+
+    )
+    .catch(error => alert('Server error'));
 };
 
 export const addComment = comment => dispatch => {
@@ -23,10 +25,10 @@ export const addComment = comment => dispatch => {
 };
 
 export const filterComments = value => dispatch => {
-        dispatch({
-            type: FILTER,
-            payload: value
-        })
+    dispatch({
+        type: FILTER,
+        payload: value
+    })
 };
 
 export const setCommentsLoading = () => {

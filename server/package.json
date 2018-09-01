@@ -4,6 +4,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
+    "client-install": "npm install --prefix comment-app",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd.. && npm start --prefix comment-app",

@@ -35,14 +35,19 @@ img {
     max-width: 85%;
 }
 
-h2, p{
+p.message{
     margin: 5px 0;
     word-wrap: break-word;
+    font-weight: 300
 }
 
-h2 {
+h2.email {
+    margin: 5px 0;
+    word-wrap: break-word;
     font-size: 20px;
 }
+
+// css for last active popup
 
 .tooltip {
     position: relative;
@@ -68,6 +73,7 @@ h2 {
     visibility: visible;
 }
 
+//  css for loader 
 .lds-ring {
   margin: 60px auto;
   position: relative;
