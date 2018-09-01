@@ -3,14 +3,6 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const CommentSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
-    name: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         required: true
@@ -21,6 +13,10 @@ const CommentSchema = new Schema({
     },
     visible: {
         type: Boolean,
+        required: true
+    },
+    commentDate: {
+        type: Number,
         required: true
     }
 });

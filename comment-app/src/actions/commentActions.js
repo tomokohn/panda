@@ -1,36 +1,38 @@
 import axios from 'axios';
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from './types';
+import { DELETE_COOMENT, COMMEMTS_LOADING, GET_COMMENTS, ADD_COMMENT } from './types';
 
-export const getItems = () => dispatch => {
-    dispatch(setItemsLoading());
-    axios.get('/api/items').then(res =>
+const SERVER_URL = 'http://localhost:5000';
+
+export const getComments = () => dispatch => {
+    //dispatch(setcommentsLoading());
+    axios.get(SERVER_URL + '/api/comments').then(res =>
         dispatch({
-            type: GET_ITEMS,
+            type: GET_COMMENTS,
             payload: res.data
         })
     );
 };
 
-export const addItem = item => dispatch => {
-    axios.post('/api/items', item).then(res =>
+export const addComment = comment => dispatch => {
+    axios.post(SERVER_URL + '/api/comments', comment).then(res =>
         dispatch({
-            type: ADD_ITEM,
+            type: GET_COMMENTS,
             payload: res.data
         })
     );
 };
 
-export const deleteItem = id => dispatch => {
-    axios.delete(`/api/items/${id}`).then(res =>
-        dispatch({
-            type: DELETE_ITEM,
-            payload: id
-        })
-    );
-};
+// export const deleteComment = id => dispatch => {
+//     axios.delete(`/api/comments/${id}`).then(res =>
+//         dispatch({
+//             type: DELETE_COMMENT,
+//             payload: id
+//         })
+//     );
+// };
 
-export const setItemsLoading = () => {
-    return {
-        type: ITEMS_LOADING
-    };
-};
+// export const setCommentsLoading = () => {
+//     return {
+//         type: COMMENTS_LOADING
+//     };
+// };

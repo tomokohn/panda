@@ -1,0 +1,32 @@
+.input-comment form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    background: #efefef;
+
+}
+
+.input-comment form > *  {
+    margin: 0 0 10px 0;
+}
+.input-comment form input {
+    height: 30px;
+    padding-left: 10px; 
+    padding-right: 10px; 
+}
+
+.input-comment textarea {
+    height: 65px;
+}
+
+.input-comment form input.submit {
+    width: 80px;
+    color: white;
+    background: #40a8df;
+    border-radius: 5px;
+    height: 35px;
+    border: none;
+    margin-left: auto;
+}

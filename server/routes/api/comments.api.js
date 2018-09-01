@@ -4,6 +4,14 @@ const router = express.Router();
 // Comment Model
 const Comment = require('../../models/comment');
 
+// router.all('/', function (req, res, next) {
+//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//     next();
+// });
+
+
 // @route   GET api/comments
 // @desc    Get All comments
 router.get('/', (req, res) => {
@@ -12,14 +20,19 @@ router.get('/', (req, res) => {
 });
 
 // @route   POST api/comments
-// @desc    Create An comment
-// @access  Public
+// @desc    store An comment
 router.post('/', (req, res) => {
+    console.log('res',req.body);
     const newComment = new Comment({
-        name: req.body.name
+        email: req.body.email,
+        message: req.body.message,
+        commentDate: req.body.commentDate,
+        visible: true,
     });
 
-    newComment.save().then(comment => res.json(comment));
+    newComment.save().then(comment => {
+        Comment.find()
+        .then(comments => res.json(comments));});
 });
 
 // @route   DELETE api/comments/:id

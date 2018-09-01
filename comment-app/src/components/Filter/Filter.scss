@@ -1,0 +1,16 @@
+.filter {
+    width: 90%;
+    background: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+}
+
+.filter input {
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

@@ -5,14 +5,18 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "cd.. && npm start --prefix comment-app",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "express": "^4.16.3",
     "mongoose": "^5.2.12"
   },
   "devDependencies": {
+    "cors": "^2.8.4",
     "nodemon": "^1.18.4"
   }
 }

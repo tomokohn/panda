@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
@@ -8,6 +9,7 @@ const app = express();
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 // DB Config URI
 const db = require('./config/keys').mongoURI;
@@ -18,6 +20,7 @@ mongoose
     .catch(err => console.log(err));
 
 app.use('/api/comments', comments);
+
 
 
 const port = process.env.PORT || 5000;
