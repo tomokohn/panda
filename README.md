@@ -1,20 +1,20 @@
 # Excercise For BigPanda
-by Tomer Kohn
+By Tomer Kohn
 
 ## Useage
 
-for Dev enviorment :
+For Dev enviorment :
 ```
 1. cd server
-2. run 'npm install' // this will install the dependencies for the server.
-3. cd comment-app
-3. run 'npm install' // this will install the dependencies for the client.
-4. go back to 'server' folder 
-5. run 'npm run dev' // this will run the client and the server concurrently 
+2. run 'npm install' // This will install the dependencies for the server.
+3. run 'npm start' // This will run the client and the server concurrently 
+4. cd comment-app
+5. run 'npm install' // This will install the dependencies for the client.
+6. run 'npm start' // This will start the client
 ```
-the client will rum on localhost:3000 and the server on localhost:5000
+The client will rum on localhost:3000 and the server on localhost:5000
 
 ## details 
 
-the client uses react-create-app as basis with redux for store and state mnagment. also added scss to css transpiler.
-the DB is stored at mLabs.
+The client uses react-create-app as basis with redux for store and state mnagment. also added scss to css transpiler.  
+The DB is stored at mLabs.
