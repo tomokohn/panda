@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Store from '../../store';
 import './Filter.css';
+import { filterComments } from '../../actions/commentActions';
 
 function mapStateToProps(state) {
     return {
@@ -12,23 +12,19 @@ function mapStateToProps(state) {
 class Filter extends Component {
     constructor() {
         super();
-        this.state = {
-            filterInput: ''
-        };
+        this.state = { value: '' };
         this.change = this.change.bind(this);
     }
-    change() {
-        Store.dispatch({
-            type: 'FILTER',
-            filter: this.state.filterInput.value
-        });
+    change(event) {
+        this.setState({ value: event.target.value });
+        this.props.filterComments(event.target.value)
     }
     render() {
         return (
             <div className='filter'>
-                <input type="text" placeholder="Filter by Email" ref={node => {
-                    this.state.filterInput =  node}
-                } onChange={this.change}
+                <input type="text" placeholder="Filter by Email" 
+                 value={this.state.value}
+                 onChange={this.change}
                 />
             </div>
         );
@@ -37,4 +33,5 @@ class Filter extends Component {
 
 export default connect(
     mapStateToProps,
+    { filterComments }
 )(Filter);

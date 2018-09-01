@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './List.css';
-import Store from '../../store';
 import md5 from 'md5'
 import { getComments } from '../../actions/commentActions';
 import MomentReact from 'react-moment';
 
 function mapStateToProps(state) {
-    return { comments: state.comment.comments };
+    return { comments: state.comment.comments, 
+             loading: state.comment.loading 
+    };
 }
 
 class List extends Component {
@@ -49,16 +50,23 @@ class List extends Component {
                         </div>
                     </li>
                 )
+            } else {
+                return null;
             }
-
         });
     }
     render() {
-        return (
-            <ul>
-                {this.listView()}
-            </ul>
-        );
+        if (this.props.loading) {
+            return (
+                <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+            );
+        } else {
+            return (
+                <ul>
+                    {this.listView()}
+                </ul>
+            );
+        }
     }
 }
 
