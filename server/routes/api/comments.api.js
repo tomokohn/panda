@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 // @route   POST api/comments
 // @desc    store An comment
 router.post('/', (req, res) => {
-    console.log('res',req.body);
+    console.log('req',req.body);
     const newComment = new Comment({
         email: req.body.email,
         message: req.body.message,
